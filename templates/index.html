@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interest Rate Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #333;
+        }
+        form {
+            background: #f4f4f4;
+            margin: 0 auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 0px #888;
+        }
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+        }
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f4f4f4;
+            box-shadow: 0px 0px 5px 0px #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Interest Rate Calculator</h1>
+        <form method="post">
+            <label for="A1">Amount to Invest annually:</label>
+            <input type="number" name="A1" value="{{ A1 }}" required>
+        
+            <label for="n1">Number of Installments:</label>
+            <input type="number" name="n1" value="{{ n1 }}" required>
+        
+            <label for="w">Waiting Period:</label>
+            <input type="number" name="w" value="{{ w }}" required>
+        
+            <label for="A2">Amount to receive annually:</label>
+            <input type="number" name="A2" value="{{ A2 }}" required>
+        
+            <label for="n2">Number of Years you receive amount:</label>
+            <input type="number" name="n2" value="{{ n2 }}" required>
+        
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result %}
+        <p>Rate of Interest: {{ result }}</p>
+        <p> So, you will invest {{A1}} for {{n1}} years, wait for {{w}} years, then you'll get {{A2}} for {{n2}} years. After maturity you'll receive your original investment {{pr}} back</p>
+        {% endif %}
+    </div>
+</body>
+</html>
