@@ -1,1 +1,1 @@
-# ROI_Calc
+This project calculates complex ROI
