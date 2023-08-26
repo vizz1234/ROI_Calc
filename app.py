@@ -43,6 +43,7 @@ def index():
 
         interest_rate = calculate_interest_rate(A1, n1, w, A2, n2)
         result = interest_rate * 100
+        result = np.round(result, 2)
         if interest_rate is not None:
             print("Your rate of interest is approximately: {:.2f}%".format(interest_rate * 100))
         else:
